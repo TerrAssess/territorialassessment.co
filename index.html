@@ -6,11 +6,6 @@
   <title>Territorial Assessment SAS | Gestionamos tus proyectos en territorio</title>
   <meta name="description" content="Soluciones en avalúos, catastro, gestión inmobiliaria, ordenamiento territorial y servicios geoespaciales. Bogotá, Colombia.">
   <meta name="theme-color" content="#12465C">
-  <meta property="og:title" content="Territorial Assessment SAS">
-  <meta property="og:description" content="Gestionamos tus proyectos en territorio.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://territorialassessment.co/">
-  <meta property="og:image" content="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -110,9 +105,7 @@
           <h2>Clientes y aliados</h2>
           <p>Algunas organizaciones que han confiado en nuestro equipo.</p>
         </div>
-        <div id="logosGrid" class="logos-grid" aria-live="polite">
-          <!-- Logos renderizados por script.js desde logos.json -->
-        </div>
+        <div id="logosGrid" class="logos-grid" aria-live="polite"></div>
       </div>
     </section>
 
@@ -124,16 +117,20 @@
           <p><strong>Correo:</strong> <a href="mailto:contacto@territorialassessment.co">contacto@territorialassessment.co</a></p>
           <p><strong>WhatsApp:</strong> <a href="https://wa.link/9u3lz6" target="_blank" rel="noopener">+57 324 579 2919</a></p>
           <div class="cta-row">
-            <a class="btn primary" href="mailto:contacto@territorialassessment.co">Escríbenos</a>
-            <a class="btn ghost" href="https://wa.link/9u3lz6" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn ghost" href="mailto:contacto@territorialassessment.co">Escríbenos</a>
+            <a class="btn primary" href="https://wa.link/9u3lz6" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Gracias, te contactaremos pronto.');">
-          <label>Nombre<input type="text" required></label>
-          <label>Correo<input type="email" required></label>
-          <label>Mensaje<textarea rows="5" required></textarea></label>
+
+        <!-- Formulario conectado a Formspree -->
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mzzabjvw" method="POST">
+          <label>Nombre<input type="text" name="name" required></label>
+          <label>Correo<input type="email" name="email" required></label>
+          <label>Mensaje<textarea name="message" rows="5" required></textarea></label>
+          <input type="hidden" name="_subject" value="Contacto desde territorialassessment.co">
+          <input type="text" name="_gotcha" style="display:none">
           <button class="btn primary" type="submit">Enviar</button>
-          <p class="form-note">Este formulario es demostrativo (sitio estático). Puedes enlazarlo a tu correo/Google Forms más adelante.</p>
+          <p id="formMsg" class="form-note" aria-live="polite"></p>
         </form>
       </div>
     </section>
