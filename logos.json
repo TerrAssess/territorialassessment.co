@@ -4,11 +4,11 @@
     "alt": "GEOINPRO"
   },
   {
-    "file": "Latitud.png",
-    "alt": "LATITUD"
-  },
-    {
     "file": "IMMECOL.png",
     "alt": "IMMECOL"
+  },
+  {
+    "file": "Latitud.png",
+    "alt": "LATITUD"
   }
 ]
