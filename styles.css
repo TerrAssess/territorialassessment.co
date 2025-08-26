@@ -1,0 +1,150 @@
+/* ====== Variables de marca ====== */
+:root{
+  --brand-900:#12465C; /* Azul oscuro */
+  --brand-700:#257497; /* Azul medio */
+  --comp-amber:#FFB800;
+  --comp-teal:#3594a2;
+  --comp-blue:#297fb9;
+  --ink-900:#0b2230;
+  --ink-700:#344e5a;
+  --ink-500:#5c7885;
+  --bg:#ffffff;
+  --bg-alt:#f5f9fb;
+  --card:#ffffff;
+  --radius:16px;
+  --shadow:0 8px 30px rgba(18,70,92,.12);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: 'Jost','Ebrima','Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+  color:var(--ink-900);
+  background:var(--bg);
+  line-height:1.6;
+  font-size:16px;
+}
+
+.container{width:min(1100px, 92%); margin-inline:auto}
+
+h1,h2,h3{line-height:1.2; color:var(--brand-900)}
+h1{font-size:clamp(2rem, 3.5vw, 3rem); margin:0 0 .5rem}
+h2{font-size:clamp(1.5rem, 2.5vw, 2.2rem); margin:0 0 1rem}
+h3{font-size:1.15rem; margin:.25rem 0 .5rem}
+
+p{margin:.5rem 0 1rem}
+
+.btn{
+  display:inline-block; padding:.8rem 1.1rem; border-radius:999px;
+  text-decoration:none; font-weight:600; border:2px solid transparent;
+  transition:.2s transform ease, .2s background ease, .2s border ease, .2s color ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--brand-700); color:#fff}
+.btn.primary:hover{background:var(--brand-900)}
+.btn.ghost{background:transparent; color:var(--brand-900); border-color:var(--brand-900)}
+.btn.small{padding:.5rem .9rem; font-size:.9rem}
+
+/* ====== Header ====== */
+.site-header{
+  position:sticky; top:0; z-index:20; background:#ffffffee; backdrop-filter:saturate(1.2) blur(6px);
+  border-bottom:1px solid #e7eef3;
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:.6rem 0}
+.brand{display:flex; align-items:center; gap:.65rem; color:var(--brand-900); text-decoration:none; font-weight:600}
+.brand-mark{display:grid; place-items:center; width:36px; height:36px; border-radius:10px; background:var(--brand-900); color:#fff; font-weight:800}
+.brand-text strong{color:var(--brand-700); font-weight:800}
+.site-nav{display:flex; gap:1rem; align-items:center}
+.site-nav a{color:var(--ink-900); text-decoration:none; font-weight:600}
+.site-nav a:hover{color:var(--brand-700)}
+
+/* ====== Hero ====== */
+.hero{position:relative; overflow:hidden}
+.hero-inner{padding:6rem 0 4rem; position:relative; z-index:1}
+.hero p{max-width:60ch}
+.hero-bg{
+  position:absolute; inset:0; background:
+  radial-gradient(800px 400px at 15% 20%, #297fb930 0, transparent 60%),
+  radial-gradient(900px 400px at 90% 10%, #3594a230 0, transparent 60%),
+  linear-gradient(180deg, #ffffff 0, #f2f8fb 100%);
+}
+.cta-row{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
+
+/* ====== Sections ====== */
+.section{padding:4rem 0}
+.section.alt{background:var(--bg-alt)}
+.section-head{display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:1.25rem}
+.hint{color:var(--ink-500); font-size:.95rem}
+
+.grid-2{display:grid; grid-template-columns:1.2fr .8fr; gap:2rem}
+@media (max-width: 880px){
+  .grid-2{grid-template-columns:1fr}
+}
+
+.cards-inline{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1rem}
+@media (max-width: 720px){ .cards-inline{grid-template-columns:1fr} }
+
+.card{
+  background:var(--card); border:1px solid #e7eef3; border-radius:var(--radius); padding:1rem 1.2rem; box-shadow:var(--shadow);
+}
+
+/* ====== Panel lateral ====== */
+.panel{
+  background:linear-gradient(160deg, #fff 0, #f1f9fc 100%);
+  border:1px solid #e7eef3; border-radius:var(--radius); padding:1rem 1.25rem; box-shadow:var(--shadow);
+}
+.bullets{margin:0 0 1rem 0; padding-left:1.1rem}
+.bullets li{margin:.4rem 0}
+.stats{display:grid; grid-template-columns:repeat(3, 1fr); gap:.75rem}
+.stats .kpi{display:block; font-size:1.6rem; font-weight:800; color:var(--brand-700)}
+.stats .label{font-size:.85rem; color:var(--ink-700)}
+
+/* ====== Servicios ====== */
+.services-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; margin-top:1rem}
+.service{
+  background:var(--card); border:1px solid #e7eef3; border-radius:var(--radius);
+  padding:1rem 1.1rem; box-shadow:var(--shadow);
+}
+.service h3{color:var(--brand-700)}
+@media (max-width: 980px){ .services-grid{grid-template-columns:repeat(2, 1fr)} }
+@media (max-width: 640px){ .services-grid{grid-template-columns:1fr} }
+
+/* ====== Logos grid ====== */
+.logos-grid{display:grid; grid-template-columns:repeat(6, 1fr); gap:1rem}
+@media (max-width: 1100px){ .logos-grid{grid-template-columns:repeat(5, 1fr)} }
+@media (max-width: 900px){ .logos-grid{grid-template-columns:repeat(4, 1fr)} }
+@media (max-width: 680px){ .logos-grid{grid-template-columns:repeat(3, 1fr)} }
+@media (max-width: 480px){ .logos-grid{grid-template-columns:repeat(2, 1fr)} }
+.logos-grid img{
+  width:100%; height:72px; object-fit:contain; background:#fff; border:1px solid #e7eef3;
+  border-radius:14px; padding:10px; filter:grayscale(20%); transition:.2s ease transform, .2s ease filter;
+  box-shadow:var(--shadow);
+}
+.logos-grid img:hover{transform:translateY(-2px); filter:grayscale(0%)}
+
+/* ====== Contacto ====== */
+.contact-form{display:grid; gap:.75rem; background:var(--card); border:1px solid #e7eef3; border-radius:var(--radius); padding:1rem 1.25rem; box-shadow:var(--shadow)}
+.contact-form label{display:grid; gap:.35rem; font-weight:600}
+.contact-form input,.contact-form textarea{
+  border:1px solid #d9e6ee; border-radius:12px; padding:.7rem .8rem; font:inherit; outline:none;
+}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--brand-700); box-shadow:0 0 0 4px #25749722}
+.form-note{color:var(--ink-500); font-size:.9rem}
+
+/* ====== Footer ====== */
+.site-footer{border-top:1px solid #e7eef3; background:#fff}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 0; flex-wrap:wrap}
+.footer-nav{display:flex; gap:1rem}
+.footer-nav a{text-decoration:none; color:var(--ink-700)}
+.footer-nav a:hover{color:var(--brand-700)}
+
+/* ====== To top ====== */
+.to-top{
+  position:fixed; right:16px; bottom:16px; width:42px; height:42px; display:grid; place-items:center;
+  border-radius:50%; background:var(--brand-700); color:#fff; text-decoration:none; font-weight:800;
+  box-shadow:var(--shadow);
+}
+
+/* ====== A11y ====== */
+:focus-visible{outline:3px solid var(--comp-amber); outline-offset:2px}
